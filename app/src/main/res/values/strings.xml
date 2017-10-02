@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ThaiChang</string>
+    <string name="LogIn">Log In</string>
+    <string name="SignUp">Sign Up</string>
+    <string name="logIntoMyAccount">LOG INTO MY ACCOUNT</string>
+    <string name="CreateAccount">Create Account</string>
+    <string name="LogOut">Log Out</string>
+    <string name="AccountSettings">Account Settings</string>
+    <string name="BrowseUsers">Browse Users</string>
+    <string name="password">Password</string>
+    <string name="display_name">Display Name</string>
+    <string name="email">Email</string>
+    <string name="CreateANewAccount">Create a New Account</string>
+    <string name="LOGIN">logIn</string>
+    <string name="Password">Password</string>
+    <string name="Email">Email</string>
+</resources>
