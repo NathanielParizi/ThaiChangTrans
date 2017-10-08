@@ -8,6 +8,7 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -69,6 +70,7 @@ public class LogInActivity extends AppCompatActivity {
 
     }
 
+    //Firebase assistant #5
     private void loginUser(String email, String password) {
 
         mAuth.signInWithEmailAndPassword(email, password)
@@ -81,8 +83,9 @@ public class LogInActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
 
                             mLoginProgress.dismiss();
-                            Intent mainActivity = new Intent(LogInActivity.this,MainActivity.class);
-                            startActivity(mainActivity);
+                            Intent mainIntent = new Intent(LogInActivity.this,MainActivity.class);
+                            mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(mainIntent);
                             finish();
 
                         } else {
@@ -97,5 +100,19 @@ public class LogInActivity extends AppCompatActivity {
                     }
                 });
 
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+      if(item.getItemId() == android.R.id.home) {
+
+          Intent settingsIntent = new Intent(LogInActivity.this, SettingsActivity.class);
+
+          settingsIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+          startActivity(settingsIntent);
+          finish();
+      }
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -3,10 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/accountSettings"
+        android:id="@+id/main_settings_btn"
         android:title="@string/AccountSettings" />
     <item
-        android:id="@+id/BrowseUsers"
+        android:id="@+id/main_browse_users_btn"
         android:title="@string/BrowseUsers" />
     <item
         android:id="@+id/main_logout_btn"

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/grandient_background3"
     tools:context="com.jtanuki.go.thaichang.StartActivity">
 
     <Button
