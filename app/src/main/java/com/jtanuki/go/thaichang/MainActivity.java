@@ -88,7 +88,16 @@ public class MainActivity extends AppCompatActivity {
             Intent settingsIntent = new Intent(MainActivity.this, SettingsActivity.class);
             startActivity(settingsIntent);
 
+
         }
+
+        if(item.getItemId() == R.id.main_browse_users_btn){
+
+            Intent browseUsersIntent = new Intent(MainActivity.this, BrowseUsersActivity.class);
+            startActivity(browseUsersIntent);
+
+        }
+
 
         return true;
 

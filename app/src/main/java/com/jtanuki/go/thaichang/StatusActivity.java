@@ -24,7 +24,12 @@ public class StatusActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     private Button mUpdateProfileBtn;
     private TextInputLayout mStatus;
-
+    private TextInputLayout mLocation;
+    private TextInputLayout mAge;
+    private TextInputLayout mPhone;
+    private TextInputLayout mInterests;
+    private String mGender;
+    private Button mMale, mFemale;
     private ProgressDialog mProgress;
 
 
@@ -39,6 +44,16 @@ public class StatusActivity extends AppCompatActivity {
         setContentView(R.layout.activity_status);
 
         String status_value = getIntent().getStringExtra("status_value");
+        String location_value = getIntent().getStringExtra("location_value");
+        String age_value = getIntent().getStringExtra("age_value");
+        String gender_value = getIntent().getStringExtra("gender_value");;
+        String phone_value = getIntent().getStringExtra("phone_value");
+        String interests_value = getIntent().getStringExtra("interests_value");
+
+
+
+
+
 
         mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
         String currentUid = mCurrentUser.getUid();
@@ -54,12 +69,48 @@ public class StatusActivity extends AppCompatActivity {
 
         mStatus = (TextInputLayout) findViewById(R.id.status_input);
         mUpdateProfileBtn = (Button) findViewById(R.id.update_profile_btn);
+        mLocation = (TextInputLayout) findViewById(R.id.locationInput);
+        mAge = (TextInputLayout) findViewById(R.id.ageInput);
+        mMale = (Button) findViewById(R.id.MALE);
+        mFemale = (Button) findViewById(R.id.FEMALE);
+        mPhone = (TextInputLayout) findViewById(R.id.PhoneInput);
+        mInterests = (TextInputLayout) findViewById(R.id.InterestsInput);
 
         mStatus.getEditText().setText(status_value);
+        mLocation.getEditText().setText(location_value);
+        mAge.getEditText().setText(age_value);
+        mGender = gender_value;
+        mPhone.getEditText().setText(phone_value);
+        mInterests.getEditText().setText(interests_value);
+
+
+//        mAge.getEditText().setText(age_value);
+//        mPhone.getEditText().setText(phone_value);
+//        mInterests.getEditText().setText(interests_value);
+
+
+
+        mMale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                 mGender = "Male";
+
+            }
+        });
+
+        mFemale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                 mGender = "Female";
+            }
+        });
 
         mUpdateProfileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 
                 mProgress = new ProgressDialog(StatusActivity.this);
                 mProgress.setTitle("Updating Profile");
@@ -67,7 +118,98 @@ public class StatusActivity extends AppCompatActivity {
                 mProgress.show();
 
                 String status = mStatus.getEditText().getText().toString();
+                String location = mLocation.getEditText().getText().toString();
+                String age = mAge.getEditText().getText().toString();
+                String phone = mPhone.getEditText().getText().toString();
+                String interests = mInterests.getEditText().getText().toString();
+                String gender = mGender.toString();
+
                 mStatusDatabase.child("status").setValue(status).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+
+                        if(task.isSuccessful()){
+
+                            mProgress.dismiss();
+
+                        } else {
+
+                            mProgress.hide();
+                            Toast.makeText(getApplicationContext(), "There was an error in updating your profile.", Toast.LENGTH_LONG).show();
+                        }
+
+                    }
+                });
+
+                mStatusDatabase.child("location").setValue(location).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+
+                        if(task.isSuccessful()){
+
+                            mProgress.dismiss();
+
+                        } else {
+
+                            mProgress.hide();
+                            Toast.makeText(getApplicationContext(), "There was an error in updating your profile.", Toast.LENGTH_LONG).show();
+                        }
+
+                    }
+                });
+
+                mStatusDatabase.child("age").setValue(age).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+
+                        if(task.isSuccessful()){
+
+                            mProgress.dismiss();
+
+                        } else {
+
+                            mProgress.hide();
+                            Toast.makeText(getApplicationContext(), "There was an error in updating your profile.", Toast.LENGTH_LONG).show();
+                        }
+
+                    }
+                });
+
+                mStatusDatabase.child("gender").setValue(gender).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+
+                        if(task.isSuccessful()){
+
+                            mProgress.dismiss();
+
+                        } else {
+
+                            mProgress.hide();
+                            Toast.makeText(getApplicationContext(), "There was an error in updating your profile.", Toast.LENGTH_LONG).show();
+                        }
+
+                    }
+                });
+
+                mStatusDatabase.child("phone").setValue(phone).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+
+                        if(task.isSuccessful()){
+
+                            mProgress.dismiss();
+
+                        } else {
+
+                            mProgress.hide();
+                            Toast.makeText(getApplicationContext(), "There was an error in updating your profile.", Toast.LENGTH_LONG).show();
+                        }
+
+                    }
+                });
+
+                mStatusDatabase.child("interests").setValue(interests).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
 

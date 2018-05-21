@@ -107,11 +107,11 @@ public class LogInActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
       if(item.getItemId() == android.R.id.home) {
 
-          Intent settingsIntent = new Intent(LogInActivity.this, SettingsActivity.class);
+          Intent settingsIntent = new Intent(LogInActivity.this, StartActivity.class);
 
           settingsIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
           startActivity(settingsIntent);
-          finish();
+
       }
         return super.onOptionsItemSelected(item);
     }

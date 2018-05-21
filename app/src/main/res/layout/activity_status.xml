@@ -7,6 +7,126 @@
     android:background="@drawable/grandient_background3"
     tools:context="com.jtanuki.go.thaichang.StatusActivity">
 
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/InterestsInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/PhoneInput"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Interests"
+            android:inputType="textShortMessage"
+            android:maxLength="200"
+            android:shadowColor="@color/White"
+            android:shadowRadius="15" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/PhoneInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/ageInput"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Phone"
+            android:inputType="textShortMessage|phone"
+            android:maxLength="8"
+            android:shadowColor="@color/White"
+            android:shadowRadius="15" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/ageInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/locationInput"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Age"
+            android:inputType="textShortMessage|number"
+            android:maxLength="3"
+            android:shadowColor="@color/White"
+            android:shadowRadius="15" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/MALE"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="93dp"
+        android:layout_marginStart="15dp"
+        android:backgroundTint="@color/Honeydew"
+
+
+        android:elevation="5dp"
+        android:foregroundGravity="center_horizontal"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp"
+        android:text="Male"
+        android:textColor="@color/Black"
+        android:textColorHighlight="@color/White"
+        android:textSize="10sp"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="224dp" />
+
+    <Button
+        android:id="@+id/FEMALE"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/MALE"
+        android:layout_toEndOf="@+id/MALE"
+        android:backgroundTint="@color/Honeydew"
+        android:elevation="5dp"
+        android:foregroundGravity="center_horizontal"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp"
+        android:text="Female"
+        android:textColor="@color/Black"
+        android:textColorHighlight="@color/White"
+        android:textSize="10sp"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="224dp" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/locationInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/status_input"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/location"
+            android:inputType="textShortMessage"
+            android:maxLength="20"
+            android:shadowColor="@color/White"
+            android:shadowRadius="15" />
+    </android.support.design.widget.TextInputLayout>
+
     <include
         android:id="@+id/statusAppBar"
         layout="@layout/app_bar_layout"
@@ -28,6 +148,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/profileDiscription"
             android:inputType="textShortMessage"
+            android:maxLength="200"
             android:shadowColor="@color/White"
             android:shadowRadius="15" />
     </android.support.design.widget.TextInputLayout>
@@ -37,10 +158,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/status_input"
-        android:layout_marginEnd="59dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="52dp"
         android:backgroundTint="@color/colorPrimaryDark"
         android:elevation="5dp"
         android:paddingBottom="5dp"

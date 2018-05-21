@@ -25,7 +25,7 @@ public class StartActivity extends AppCompatActivity {
 
                 Intent logActivity = new Intent(StartActivity.this, LogInActivity.class);
                 startActivity(logActivity);
-                finish();
+
 
             }
         });
@@ -36,7 +36,7 @@ public class StartActivity extends AppCompatActivity {
 
                 Intent regActivity = new Intent(StartActivity.this, RegisterActivity.class);
                 startActivity(regActivity);
-                finish();
+
             }
         });
 

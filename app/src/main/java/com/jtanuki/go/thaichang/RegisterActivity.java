@@ -103,6 +103,11 @@ public class RegisterActivity extends AppCompatActivity {
                             userMap.put("status","Hello ThaiChang!");
                             userMap.put("image", "default");
                             userMap.put("thumb_image", "default");
+                            userMap.put("location", "Location");
+                            userMap.put("age", "Age: ");
+                            userMap.put("gender", "Gender");
+                            userMap.put("phone","Phone #");
+                            userMap.put("interests","");
 
                             mDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
@@ -129,8 +134,10 @@ public class RegisterActivity extends AppCompatActivity {
                                 Toast.LENGTH_SHORT).show();
 
                             mRegProgress.hide();
-                            Toast.makeText(RegisterActivity.this, "Password should contain a letter, a number, and 6 digits.",
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this, "Password should contain a letter, a number, and atleast 6 characters.",
+                                    Toast.LENGTH_LONG).show();
+                            Toast.makeText(RegisterActivity.this, "Email must be unique.",
+                                    Toast.LENGTH_LONG).show();
                         }
 
 
@@ -145,7 +152,7 @@ public class RegisterActivity extends AppCompatActivity {
         if(item.getItemId() == android.R.id.home) {
             Intent startIntent = new Intent(RegisterActivity.this, StartActivity.class);
             startActivity(startIntent);
-            finish();
+
         }
         return super.onOptionsItemSelected(item);
     }

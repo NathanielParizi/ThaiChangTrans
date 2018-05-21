@@ -19,8 +19,16 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="profile_status">Status</string>
     <string name="profile_name">Profile Name</string>
-    <string name="change_image">CHANGE IMAGE</string>
+    <string name="change_image">VIEW PROFILE</string>
     <string name="change_status">CHANGE STATUS</string>
     <string name="profileDiscription">About Me</string>
     <string name="updateProfile">UPDATE PROFILE</string>
+    <string name="title_activity_users">UsersActivity</string>
+    <string name="profileName">Profile Name</string>
+    <string name="profileDefaultStatus">Profile Status</string>
+    <string name="location">Location </string>
+    <string name="Age">Age</string>
+    <string name="Ponhe" />
+    <string name="Phone">Phone</string>
+    <string name="Interests">Interests</string>
 </resources>
