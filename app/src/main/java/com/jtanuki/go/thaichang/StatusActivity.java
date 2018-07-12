@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,6 +32,7 @@ public class StatusActivity extends AppCompatActivity {
     private String mGender;
     private Button mMale, mFemale;
     private ProgressDialog mProgress;
+    private ImageView mGenderImage;
 
 
     //Firebase
@@ -67,6 +69,8 @@ public class StatusActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Account Profile");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        mGenderImage = (ImageView) findViewById(R.id.genderImage);
+
         mStatus = (TextInputLayout) findViewById(R.id.status_input);
         mUpdateProfileBtn = (Button) findViewById(R.id.update_profile_btn);
         mLocation = (TextInputLayout) findViewById(R.id.locationInput);
@@ -95,6 +99,7 @@ public class StatusActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                  mGender = "Male";
+                 mGenderImage.setImageResource(R.drawable.male);
 
             }
         });
@@ -103,9 +108,13 @@ public class StatusActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                 mGender = "Female";
+                mGender = "Female";
+                mGenderImage.setImageResource(R.drawable.girl);
+
+
             }
         });
+
 
         mUpdateProfileBtn.setOnClickListener(new View.OnClickListener() {
             @Override

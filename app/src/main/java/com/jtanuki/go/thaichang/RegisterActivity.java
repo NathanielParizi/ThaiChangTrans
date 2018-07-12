@@ -76,8 +76,6 @@ public class RegisterActivity extends AppCompatActivity {
 
                 }
 
-
-
             }
         });
     }
@@ -103,10 +101,10 @@ public class RegisterActivity extends AppCompatActivity {
                             userMap.put("status","Hello ThaiChang!");
                             userMap.put("image", "default");
                             userMap.put("thumb_image", "default");
-                            userMap.put("location", "Location");
-                            userMap.put("age", "Age: ");
-                            userMap.put("gender", "Gender");
-                            userMap.put("phone","Phone #");
+                            userMap.put("location", "");
+                            userMap.put("age", "");
+                            userMap.put("gender", "");
+                            userMap.put("phone","");
                             userMap.put("interests","");
 
                             mDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -121,13 +119,10 @@ public class RegisterActivity extends AppCompatActivity {
                             startActivity(mainIntent);
                             finish();
 
-
                                     }
 
                                 }
                             });
-
-
 
 
                         } else {  Toast.makeText(RegisterActivity.this, "Please correct information and try again.",

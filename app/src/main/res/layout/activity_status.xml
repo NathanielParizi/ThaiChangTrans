@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/Phone"
             android:inputType="textShortMessage|phone"
-            android:maxLength="8"
+            android:maxLength="12"
             android:shadowColor="@color/White"
             android:shadowRadius="15" />
     </android.support.design.widget.TextInputLayout>
@@ -171,6 +171,15 @@
         android:text="@string/updateProfile"
         android:textColor="@color/White"
         android:textColorHighlight="@color/Honeydew" />
+
+    <ImageView
+        android:id="@+id/genderImage"
+        android:layout_width="48dp"
+        android:layout_height="45dp"
+        android:layout_alignBottom="@+id/MALE"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="169dp"
+        app:srcCompat="@drawable/malefem" />
 
 
 </RelativeLayout>

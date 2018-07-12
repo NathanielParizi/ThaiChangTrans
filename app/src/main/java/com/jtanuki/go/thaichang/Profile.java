@@ -28,6 +28,8 @@ public class Profile extends AppCompatActivity {
     private TextView mInterests;
     private RecyclerView mystuffList;
 
+
+
     private ProgressDialog mProgressDialog;
 
     private DatabaseReference mUsersDatabase;
@@ -40,8 +42,14 @@ public class Profile extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
 
+        mystuffList = (RecyclerView) findViewById(R.id.mystuffRecyclerView);
+        mystuffList.setHasFixedSize(true);
+        mystuffList.setLayoutManager(new LinearLayoutManager(this));
+
+
         String user_id = getIntent().getStringExtra("user_id");
         mUsersDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+
 
         mProfileImageView = (ImageView) findViewById(R.id.profile_image);
         mName = (TextView) findViewById(R.id.Name);
@@ -58,7 +66,7 @@ public class Profile extends AppCompatActivity {
         mProgressDialog.setCanceledOnTouchOutside(false);
         mProgressDialog.show();
 
-        mystuffList = (RecyclerView) findViewById(R.id.mystuffRecyclerView);
+
         mystuffList.setHasFixedSize(true);
         mystuffList.setLayoutManager(new LinearLayoutManager(this));
 
@@ -77,10 +85,11 @@ public class Profile extends AppCompatActivity {
 
                 mName.setText(displayName);
                 mStatus.setText(status);
-                mLocation.setText(location);
-                mAge.setText(age);
+                mLocation.setText("From: " + location);
+                mAge.setText("Age: " + age);
                 mGender.setText(gender);
-                mInterests.setText(interests);
+                mPhoneNumber.setText(phone);
+                mInterests.setText("My interests: " + interests);
 
                 Picasso.get().load(image).placeholder(R.drawable.defaultprofileuser).into(mProfileImageView);
 
@@ -95,5 +104,10 @@ public class Profile extends AppCompatActivity {
             }
         });
 
+
     }
+
+
+
+
 }

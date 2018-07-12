@@ -7,19 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".Profile">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/mystuffRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="135dp"
-        android:layout_below="@id/Status"
-        android:layout_marginTop="197dp"
-        android:orientation="horizontal" />
-
     <ImageView
         android:id="@+id/profile_image"
 
-        android:layout_width="177dp"
-        android:layout_height="167dp"
+        android:layout_width="169dp"
+        android:layout_height="162dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:fadingEdge="horizontal|vertical"
@@ -35,14 +27,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/Location"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="43dp"
         android:maxLength="20"
         android:maxLines="1"
         android:shadowColor="@color/White"
         android:shadowRadius="15"
         android:text="Name"
         android:textColor="@color/Black"
-        android:textSize="18sp"
+        android:textSize="20sp"
         tools:layout_editor_absoluteX="141dp"
         tools:layout_editor_absoluteY="184dp" />
 
@@ -57,6 +49,7 @@
         android:maxLength="11"
         android:shadowColor="@color/White"
         android:shadowRadius="15"
+        android:textColor="@color/Black"
         android:textSize="16sp"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="434dp"
@@ -72,6 +65,7 @@
         android:maxLength="8"
         android:shadowColor="@color/White"
         android:shadowRadius="15"
+        android:textColor="@color/Black"
         android:textSize="16sp"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="265dp"
@@ -85,6 +79,7 @@
         android:layout_below="@+id/Age"
         android:shadowColor="@color/White"
         android:shadowRadius="15"
+        android:textColor="@color/Black"
         android:textSize="16sp"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="298dp"
@@ -99,6 +94,7 @@
         android:maxLength="10"
         android:shadowColor="@color/White"
         android:shadowRadius="15"
+        android:textColor="@android:color/background_dark"
         android:textSize="16sp"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="332dp"
@@ -120,31 +116,41 @@
     <TextView
         android:id="@+id/Status"
         android:layout_width="319dp"
-        android:layout_height="wrap_content"
-
+        android:layout_height="93dp"
+        android:layout_above="@id/Interests"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/Location"
+        android:layout_marginBottom="12dp"
         android:layout_marginTop="180dp"
-        android:maxLength="200"
+        android:maxLength="50"
         android:maxLines="3"
         android:shadowColor="@color/White"
         android:shadowRadius="15"
+        android:textAlignment="center"
         android:textColor="@color/Black"
         android:textSize="15sp"
         tools:layout_editor_absoluteX="16dp" />
 
     <TextView
         android:id="@+id/Interests"
-        android:layout_width="319dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/Location"
-        android:layout_marginBottom="166dp"
-        android:maxLines="9"
+        android:layout_width="306dp"
+
+        android:layout_height="131dp"
+        android:layout_above="@+id/inventory"
+        android:layout_alignStart="@+id/Name"
+        android:layout_marginBottom="8dp"
+        android:maxLines="8"
         android:shadowColor="@color/White"
         android:shadowRadius="15"
-        android:text="String current_user_id = mCurrentUser.getUid();String current_user_id = mCurrentUser.getUid();String current_user_id = mCurrentUser.getUid();String current_user_id = mCurrentUser.getUid();String current_user_id = mCurrentUser.getUid();String current_user_id = mCurrentUser.getUid();String current_user_id = mCurrentUser.getUid();String current_user_id = mCurrentUser.getUid();String current_user_id = mCurrentUser.getUid();String current_user_id = mCurrentUser.getUid();String current_user_id = mCurrentUser.getUid();String current_user_id = mCurrentUser.getUid();String current_user_id = mCurrentUser.getUid();String current_user_id = mCurrentUser.getUid();String current_user_id = mCurrentUser.getUid();String current_user_id = mCurrentUser.getUid();String current_user_id = mCurrentUser.getUid();String current_user_id = mCurrentUser.getUid();String current_user_id = mCurrentUser.getUid();String current_user_id = mCurrentUser.getUid();String current_user_id = mCurrentUser.getUid();String current_user_id = mCurrentUser.getUid();String current_user_id = mCurrentUser.getUid();String current_user_id = mCurrentUser.getUid();"
         android:textColor="@color/Black"
         android:textSize="14sp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/mystuffRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal" />
 
 </RelativeLayout>

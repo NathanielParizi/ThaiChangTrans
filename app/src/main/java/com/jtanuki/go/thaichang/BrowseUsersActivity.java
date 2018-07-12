@@ -104,7 +104,7 @@ public class BrowseUsersActivity extends AppCompatActivity {
 
         public void setDisplayName(String name){
 
-            TextView userNameView = (TextView) mView.findViewById(R.id.user_single_name);
+            TextView userNameView = (TextView) mView.findViewById(R.id.item);
             userNameView.setText(name);
         }
 
@@ -119,7 +119,7 @@ public class BrowseUsersActivity extends AppCompatActivity {
 
         public void setUserImage(String thumb_image){
 
-            CircleImageView userImageView = (CircleImageView) mView.findViewById(R.id.user_single_image);
+            CircleImageView userImageView = (CircleImageView) mView.findViewById(R.id.imageStuff);
 
             Picasso.get().load(thumb_image).placeholder(R.drawable.defaultprofileuser).into(userImageView);
 

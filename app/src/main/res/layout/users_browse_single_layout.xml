@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/user_single_image"
+        android:id="@+id/imageStuff"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginBottom="15dp"
@@ -17,12 +17,14 @@
         tools:ignore="RtlHardcoded" />
 
     <TextView
-        android:id="@+id/user_single_name"
+        android:id="@+id/item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/user_single_image"
+        android:shadowColor="@color/White"
+        android:shadowRadius="15"
+        android:layout_alignTop="@+id/imageStuff"
         android:layout_marginStart="22dp"
-        android:layout_toEndOf="@+id/user_single_image"
+        android:layout_toEndOf="@+id/imageStuff"
         android:text="@string/profileName"
         android:textColor="@color/Black"
         android:textSize="16sp" />
@@ -31,9 +33,12 @@
         android:id="@+id/user_default_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/user_single_name"
-        android:layout_below="@+id/user_single_name"
+        android:shadowColor="@color/White"
+        android:shadowRadius="15"
+        android:layout_alignStart="@+id/item"
+        android:layout_below="@+id/item"
         android:layout_marginTop="13dp"
+        android:maxLength="25"
         android:text="@string/profileDefaultStatus" />
 
 </RelativeLayout>
